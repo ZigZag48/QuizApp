@@ -9,8 +9,7 @@
     "lint": "",
     "serve": "node --version",
     "start": "webpack-dev-server --open",
-    "build": "webpack --mode production",
-    "test": "jest"
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "vee-validate": "^2.2.8",
