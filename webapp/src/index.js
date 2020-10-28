@@ -9,7 +9,7 @@ Vue.use(VeeValidate);
 
 // setup fake backend
 import { configureFakeBackend } from './_helper';
-configureFakeBackend();
+figureFakeBackend();
 
 new Vue({
     el: '#app',
