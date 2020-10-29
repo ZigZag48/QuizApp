@@ -3,16 +3,16 @@
     <h2>Login</h2>
     <form @submit.prevent="loginBut">
       <div class="form-group">
-        <label for="username">Username</label>
+        <label for="emailaddress">E-mail address</label>
         <input
           type="text"
-          v-model="username"
-          name="username"
+          v-model="emailaddress"
+          name="emailaddress"
           class="form-control"
-          :class="{ 'is-invalid': submitted && !username }"
+          :class="{ 'is-invalid': submitted && !emailaddress }"
         />
-        <div v-show="submitted && !username" class="invalid-feedback">
-          Username is required
+        <div v-show="submitted && !emailaddress" class="invalid-feedback">
+          E-mail address is required
         </div>
       </div>
       <div class="form-group">
@@ -50,7 +50,7 @@ import "@firebase/auth";
 export default {
   data() {
     return {
-      username: "",
+      emailaddress: "",
       password: "",
       submitted: false,
     };
@@ -66,15 +66,15 @@ export default {
     ...mapActions("account", ["login", "logout"]),
     handleSubmit(e) {
       this.submitted = true;
-      const { username, password } = this;
-      if (username && password) {
-        this.login({ username, password });
+      const { emailaddress, password } = this;
+      if (emailaddress && password) {
+        this.login({ emailaddress, password });
       }
     },
     loginBut() {
       firebase
         .auth()
-        .signInWithEmailAndPassword(this.username, this.password)
+        .signInWithEmailAndPassword(this.emailaddress, this.password)
         .then((data) => {
           console.log(data);
           //this.$router.replace({ name: "secret" });
