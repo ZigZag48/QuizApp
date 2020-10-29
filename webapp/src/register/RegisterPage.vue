@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>Register</h2>
-        <form @submit.prevent="handleSubmit">
+        <form @submit.prevent="regBut">
             <div class="form-group">
                 <label for="firstName">First Name</label>
                 <input type="text" v-model="user.firstName" v-validate="'required'" name="firstName" class="form-control" :class="{ 'is-invalid': submitted && errors.has('firstName') }" />
@@ -33,6 +33,8 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import firebase from "firebase/app";
+import "@firebase/auth"; 
 
 export default {
     data () {
@@ -58,6 +60,15 @@ export default {
                     this.register(this.user);
                 }
             });
+        },
+        regBut() {
+            firebase
+                .auth()
+                .createUserWithEmailAndPassword(this.user.username, this.user.password)
+                .then(() => {
+                console.log(this.username, this.password);
+                })
+                .catch(error => (this.error = error));
         }
     }
 };
