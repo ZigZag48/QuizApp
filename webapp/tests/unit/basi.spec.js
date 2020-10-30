@@ -1,6 +1,6 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
-import Actions from '@/Actions/Actions.vue'
+import Actions from '@/actions/Actions.vue'
 
 const localVue = createLocalVue()
 
