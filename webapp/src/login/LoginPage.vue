@@ -57,27 +57,27 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
-import firebase from "firebase/app";
-import "@firebase/auth";
+import { mapState, mapActions } from 'vuex';
+import firebase from 'firebase/app';
+import '@firebase/auth';
 
 export default {
   data() {
     return {
-      emailaddress: "",
-      password: "",
+      emailaddress: '',
+      password: '',
       submitted: false,
     };
   },
   computed: {
-    ...mapState("account", ["status"]),
+    ...mapState('account', ['status']),
   },
   created() {
     // reset login status
     this.logout();
   },
   methods: {
-    ...mapActions("account", ["login", "logout"]),
+    ...mapActions('account', ['login', 'logout']),
     handleSubmit(e) {
       this.submitted = true;
       const { emailaddress, password } = this;
@@ -91,7 +91,7 @@ export default {
         .signInWithEmailAndPassword(this.emailaddress, this.password)
         .then((data) => {
           console.log(data);
-          //this.$router.replace({ name: "secret" });
+          // this.$router.replace({ name: "secret" });
         })
         .catch((error) => {
           this.error = error;

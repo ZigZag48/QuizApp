@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import HomePage from '../home/HomePage'
-import LoginPage from '../login/LoginPage'
-import RegisterPage from '../register/RegisterPage'
-import ForgotPassword from '../forgotpassword/ForgotPassword'
+import HomePage from '../home/HomePage.vue';
+import LoginPage from '../login/LoginPage.vue';
+import RegisterPage from '../register/RegisterPage.vue';
+import ForgotPassword from '../forgotpassword/ForgotPassword.vue';
 
 Vue.use(Router);
 
@@ -17,10 +17,11 @@ export const router = new Router({
     { path: '/forgotpassword', component: ForgotPassword },
 
     // otherwise redirect to home
-    { path: '*', redirect: '/' }
-  ]
+    { path: '*', redirect: '/' },
+  ],
 });
 
+// eslint-disable-next-line consistent-return
 router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
   const publicPages = ['/login', '/register', '/forgotpassword'];
@@ -32,4 +33,4 @@ router.beforeEach((to, from, next) => {
   }
 
   next();
-})
+});
