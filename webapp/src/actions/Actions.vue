@@ -6,17 +6,17 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 
-  export default {
-    methods: {
-      ...mapActions(['actionClick']),
-      actionInputIfTrue: function actionInputIfTrue(event) {
-        const inputValue = event.target.value
-        if (inputValue === 'input') {
-          this.$store.dispatch('actionInput', { inputValue })
-        }
+export default {
+  methods: {
+    ...mapActions(['actionClick']),
+    actionInputIfTrue: function actionInputIfTrue(event) {
+      const inputValue = event.target.value;
+      if (inputValue === 'input') {
+        this.$store.dispatch('actionInput', { inputValue });
       }
-    }
-  }
+    },
+  },
+};
 </script>

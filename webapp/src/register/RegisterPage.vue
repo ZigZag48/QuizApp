@@ -85,27 +85,27 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
-import firebase from "firebase/app";
-import "@firebase/auth";
+import { mapState, mapActions } from 'vuex';
+import firebase from 'firebase/app';
+import '@firebase/auth';
 
 export default {
   data() {
     return {
       user: {
-        firstName: "",
-        lastName: "",
-        emailaddress: "",
-        password: "",
+        firstName: '',
+        lastName: '',
+        emailaddress: '',
+        password: '',
       },
       submitted: false,
     };
   },
   computed: {
-    ...mapState("account", ["status"]),
+    ...mapState('account', ['status']),
   },
   methods: {
-    ...mapActions("account", ["register"]),
+    ...mapActions('account', ['register']),
     handleSubmit(e) {
       this.submitted = true;
       this.$validator.validate().then((valid) => {
@@ -119,7 +119,7 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(
           this.user.emailaddress,
-          this.user.password
+          this.user.password,
         )
         .then(() => {
           console.log(this.emailaddress, this.password);
