@@ -39,9 +39,6 @@
             Login
           </button>
         </div>
-        sudo apt-get install wmctrl xdotool
-
-
         <label>
           Don't have an account yet?
           <router-link to="/register" class="btn btn-link"

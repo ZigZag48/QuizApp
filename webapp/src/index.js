@@ -7,9 +7,9 @@ import App from './app/App.vue';
 
 // setup fake backend
 //import { configureFakeBackend } from './_helper';
-//configureFakeBackend();
-Vue.use(VeeValidate);
 
+Vue.use(VeeValidate);
+//configureFakeBackend();
 
 // eslint-disable-next-line no-new
 new Vue({
