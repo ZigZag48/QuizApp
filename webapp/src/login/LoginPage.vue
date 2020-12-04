@@ -39,7 +39,6 @@
             Login
           </button>
         </div>
-
         <label>
           Don't have an account yet?
           <router-link to="/register" class="btn btn-link"
