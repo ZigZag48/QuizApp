@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="df">
     <h2>Login</h2>
     <form @submit.prevent="loginBut">
       <div class="form-group">
@@ -85,7 +85,7 @@ export default {
         .signInWithEmailAndPassword(this.emailaddress, this.password)
         .then((data) => {
           console.log(data);
-          // this.$router.replace({ name: "secret" });
+          this.$router.replace({ path: "main" });
         })
         .catch((error) => {
           this.error = error;
@@ -94,3 +94,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.df{
+  position: relative;
+  top: 200px;
+  left: 35%;
+  width: 30%;
+}
+</style>

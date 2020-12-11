@@ -8,7 +8,7 @@
       <div class="navbar-menu">
         <div class="navbar-start">
           <a class="navbar-item brand labelmove">
-            Awesome Random Quiz
+            Quiz
           </a>
 
           <a class="navbar-item is-tab is-active labelmove">
@@ -35,7 +35,6 @@ export default {
 
 <style scoped lang="scss">
 .labelmove{
-    position: relative;
-    left: 150%;
+  left: 50rem;
 }
 </style>
