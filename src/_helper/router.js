@@ -13,7 +13,7 @@ Vue.use(Router);
 export const router = new Router({
   mode: 'history',
   routes: [
-    { path: '/', component: HomePage },
+    // { path: '/', component: HomePage },
     { path: '/login', component: LoginPage },
     { path: '/quiz', component: Quiz },
     { path: '/main', component: Main },
@@ -21,6 +21,6 @@ export const router = new Router({
     // { path: '/forgotpassword', component: ForgotPassword },
 
     // otherwise redirect to home
-    { path: '*', redirect: '/' },
+    { path: '*', redirect: '/login' },
   ],
 });
