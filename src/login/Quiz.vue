@@ -1,10 +1,12 @@
 <template>
-  <div id="app">
-    <Header
-      class="header"
+  <div >
+    <div class="df">
+      <Header
       :correct-answers="correctAnswers"
       :total-questions="totalQuestions"
     />
+    </div>
+    
 
     <div class="qb">
       <QuestionBox
@@ -78,13 +80,11 @@ export default {
 
 .qb{
     position: relative;
-    right: 10%;
-    width: 200%;
+    left: 20%;
+    width: 100%;
 }
 
 .header{
     position: relative;
-    right: 50%;
-    width: 200%;
 }
 </style>
